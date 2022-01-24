@@ -47,7 +47,7 @@ free(president);
 ```
 u will get output like this:
 
-![output example](/assets/output.png "output example")
+![output example](/assets/output1.png "output example")
 
 ### What needs to be done:
 - Compiler parser needs to be optimised and tested. For now this is really bad
