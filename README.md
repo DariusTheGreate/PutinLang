@@ -47,6 +47,8 @@ free(president);
 ```
 u will get output like this
 
+![output example](/assets/output.png "output example")
+
 ### What needs to be done:
 - Compiler parser needs to be optimised and tested. For now this is really bad
 - Using vectors for storing stack and heap vaues is kinda stupid way to act
@@ -55,5 +57,3 @@ u will get output like this
 - Write bytecode, like in Java?
 - Threading and thread contexts switching, simmilar to my coroutines project.
 - Scheduling?
-
-![output example](/assets/output.png "output example")
