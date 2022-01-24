@@ -1,0 +1,14 @@
+  int   mister_putin    = 10;
+ 
+   int    russian   = malloc(1000);
+  int   best    = 10;
+ 
+   int    president   = malloc(1000);
+  int   of    = 10;
+ 
+   int    the   = malloc(1000);
+  int   world    = 10;
+ 
+   int    u_kno   = malloc(1000);
+
+free(president);
