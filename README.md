@@ -47,5 +47,13 @@ free(president);
 ```
 u will get output like this
 
+### What needs to be done:
+- Compiler parser needs to be optimised and tested. For now this is really bad
+- Using vectors for storing stack and heap vaues is kinda stupid way to act
+- Create own string class
+- structs defenition. Storing types table inside VM? 
+- Write bytecode, like in Java?
+- Threading and thread contexts switching, simmilar to my coroutines project.
+- Scheduling?
 
 ![output example](/assets/output.png "output example")
