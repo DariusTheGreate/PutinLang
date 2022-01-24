@@ -11,4 +11,6 @@
  
    int    u_kno   = malloc(1000);
 
+| clear heap |
+
 free(president);

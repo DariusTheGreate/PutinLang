@@ -46,14 +46,16 @@ public:
 			if (file.eof())
 				break;
 			
+			if(ch == '|'){
+				commentSection = !commentSection;
+				file >> std::noskipws >> ch;				
+			}
+
 			if(commentSection)
 				continue;
 
 			if(ch == '\n')
 				continue;
-
-			if(ch == '|')
-				commentSection = !commentSection;
 
 			if(ch == ';'){
 				tokens.push_back(Token(std::string(buffer)));
@@ -71,15 +73,14 @@ public:
 	void processTokens(const Tokens& tokens) {
 		//generate bytecode?
 		for(size_t i = 0; i < tokens.size(); ++i){
+			std::cout << "Token: ";
+			tokens[i].printToken();
+			std::cout << "\n";
+
 			if(tokens[i].identifyTokenType() == TokenType::VariableDeclaration)
 				vm.AcceptObject(tokens[i].checkForVariableDeclaration());
 			if(tokens[i].identifyTokenType() == TokenType::VariableDeletion)
 				vm.DeleteObject(tokens[i].checkForVariableDeletion());
-
-			std::cout << "\n";
-			
-			std::cout << "Token: ";
-			tokens[i].printToken();
 
 			std::cout << "\n";
 		}
@@ -120,7 +121,7 @@ private:
 		TokenType identifyTokenType() const{
 			if(token.find("free(") != std::string::npos)
 				return TokenType::VariableDeletion;
-			if(token.find("malloc") != std::string::npos)
+			if(token.find("malloc") != std::string::npos || token.find("=") != std::string::npos)
 				return TokenType::VariableDeclaration;
 			if(token.find("type") != std::string::npos)
 				return TokenType::StructDeclaration;
