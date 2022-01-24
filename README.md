@@ -45,7 +45,7 @@ Like this, for now, for input similar to this:
 free(president);
 
 ```
-u will get output like this
+u will get output like this:
 
 ![output example](/assets/output.png "output example")
 
